@@ -1,0 +1,98 @@
+
+### Get Product 
+GET http://localhost:8081/api/v2/product?token=1234 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzNlOGIwZWFmNzQzMzA5OGY0NmViNSIsImxldmVsIjoibm9ybWFsIiwidXNlcm5hbWUiOiJsZWtAZ21haWwuY29tIiwiaWF0IjoxNjY0MzQ5ODAyLCJleHAiOjE2NjY5NDE4MDIsImF1ZCI6Imh0dHA6Ly9jb2RlbW9iaWxlcy5jb20iLCJpc3MiOiJDb2RlTW9iaWxlcyBMdGQiLCJzdWIiOiJjaGFpeWFzaXQudEBnbWFpbC5jb20ifQ.GgafQQhKchtoC9HD7dnbJnCQ-RTH_b4JGrm6M1tOH2z7Og_FGtnq7cVxgEmU3zG83uRIC48IAVEQptBrouQtUUz1MQ67fV6vRC2PibVPPKODDmdEX1U0QK7Q2XyGz02u3EKZU_mxTAqSR2sbXeG-NLIesBvlYi4z1RkKuHfL5qY
+
+### Get Product with keyword
+GET http://localhost:8081/api/v2/product/name/serial HTTP/1.1
+
+
+### Get Product by ID 
+GET http://localhost:8081/api/v2/product/id/13 HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzNlOGIwZWFmNzQzMzA5OGY0NmViNSIsImxldmVsIjoibm9ybWFsIiwidXNlcm5hbWUiOiJsZWtAZ21haWwuY29tIiwiaWF0IjoxNjY0MzQ5ODAyLCJleHAiOjE2NjY5NDE4MDIsImF1ZCI6Imh0dHA6Ly9jb2RlbW9iaWxlcy5jb20iLCJpc3MiOiJDb2RlTW9iaWxlcyBMdGQiLCJzdWIiOiJjaGFpeWFzaXQudEBnbWFpbC5jb20ifQ.GgafQQhKchtoC9HD7dnbJnCQ-RTH_b4JGrm6M1tOH2z7Og_FGtnq7cVxgEmU3zG83uRIC48IAVEQptBrouQtUUz1MQ67fV6vRC2PibVPPKODDmdEX1U0QK7Q2XyGz02u3EKZU_mxTAqSR2sbXeG-NLIesBvlYi4z1RkKuHfL5qY
+
+### Delete Product by ID 
+DELETE  http://localhost:8081/api/v2/product/id/78 HTTP/1.1
+
+
+### Create 
+POST http://localhost:8081/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzNlOGIwZWFmNzQzMzA5OGY0NmViNSIsImxldmVsIjoibm9ybWFsIiwidXNlcm5hbWUiOiJsZWtAZ21haWwuY29tIiwiaWF0IjoxNjY0MzQ5ODAyLCJleHAiOjE2NjY5NDE4MDIsImF1ZCI6Imh0dHA6Ly9jb2RlbW9iaWxlcy5jb20iLCJpc3MiOiJDb2RlTW9iaWxlcyBMdGQiLCJzdWIiOiJjaGFpeWFzaXQudEBnbWFpbC5jb20ifQ.GgafQQhKchtoC9HD7dnbJnCQ-RTH_b4JGrm6M1tOH2z7Og_FGtnq7cVxgEmU3zG83uRIC48IAVEQptBrouQtUUz1MQ67fV6vRC2PibVPPKODDmdEX1U0QK7Q2XyGz02u3EKZU_mxTAqSR2sbXeG-NLIesBvlYi4z1RkKuHfL5qY
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+iphone14
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test.jpg"
+Content-Type: image/png
+
+< ./test_3rd.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### Edit 
+PUT http://localhost:8081/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMzNlOGIwZWFmNzQzMzA5OGY0NmViNSIsImxldmVsIjoibm9ybWFsIiwidXNlcm5hbWUiOiJsZWtAZ21haWwuY29tIiwiaWF0IjoxNjY0MzQ5ODAyLCJleHAiOjE2NjY5NDE4MDIsImF1ZCI6Imh0dHA6Ly9jb2RlbW9iaWxlcy5jb20iLCJpc3MiOiJDb2RlTW9iaWxlcyBMdGQiLCJzdWIiOiJjaGFpeWFzaXQudEBnbWFpbC5jb20ifQ.GgafQQhKchtoC9HD7dnbJnCQ-RTH_b4JGrm6M1tOH2z7Og_FGtnq7cVxgEmU3zG83uRIC48IAVEQptBrouQtUUz1MQ67fV6vRC2PibVPPKODDmdEX1U0QK7Q2XyGz02u3EKZU_mxTAqSR2sbXeG-NLIesBvlYi4z1RkKuHfL5qY
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="id";
+
+45
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Arduino board (Edit)
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+333
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+200
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test_2nd.jpg"
+Content-Type: image/png
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+
+---------------------------------------------
+### Heroku
+
+### Create 
+POST https://cmgostock.herokuapp.com/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDExNzI5NTgsImlkIjo0LCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiY20yIn0.Gjh80yfcwzR8nTtiD4tM0zTDb9CgemuGGJoLB5v0DF8
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="name";
+
+Angular2 
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="stock";
+
+300
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="price";
+
+180
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="image"; filename="test.jpg"
+Content-Type: image/png
+
+< ./test.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
